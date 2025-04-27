@@ -24,12 +24,23 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-couchbase'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    // Spring boot
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // MapStruct
+    implementation 'org.mapstruct:mapstruct'
+    annotationProcessor 'org.mapstruct:mapstruct-processor'
+    // couchbase
+    implementation 'org.springframework.boot:spring-boot-starter-data-couchbase'
+    // Validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    // kafka
     implementation 'org.springframework.kafka:spring-kafka'
+    // lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    // Logging
+    implementation 'net.logstash.logback:logstash-logback-encoder'
+    // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

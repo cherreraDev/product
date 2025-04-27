@@ -1,5 +1,6 @@
-package com.chstore.product.domain.model;
+package com.chstore.product.domain.model.vo;
 
+import com.chstore.product.domain.exception.InvalidProductIdException;
 import lombok.Value;
 
 import java.util.UUID;
@@ -10,7 +11,7 @@ public class ProductId {
 
     public ProductId(UUID value) {
         if(value == null) {
-            throw new IllegalArgumentException("Product ID cannot be null");
+            throw new InvalidProductIdException("Product ID cannot be null");
         }
         this.value = value;
     }

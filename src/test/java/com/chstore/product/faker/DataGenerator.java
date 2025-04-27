@@ -2,7 +2,7 @@ package com.chstore.product.faker;
 
 import java.util.Random;
 
-public class StringGenerator {
+public class DataGenerator {
     private static final String ALPHANUMERIC = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static final String CYRILLIC = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
     private static final String GREEK = "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ";
@@ -12,7 +12,7 @@ public class StringGenerator {
     private static final Random RANDOM = new Random();
     public static String randomString(int minLength, int maxLength) {
         if (minLength > maxLength || minLength < 0) {
-            throw new IllegalArgumentException("Los límites de longitud no son válidos.");
+            throw new IllegalArgumentException("invalid string length.");
         }
 
         int length = RANDOM.nextInt(maxLength - minLength + 1) + minLength;
@@ -22,11 +22,10 @@ public class StringGenerator {
             sb.append(ALL_CHARS.charAt(RANDOM.nextInt(ALL_CHARS.length())));
         }
 
-        // Añadir aleatoriamente algunos caracteres Unicode más exóticos
-        if (RANDOM.nextDouble() < 0.1) { // Reducimos la frecuencia un poco
+        if (RANDOM.nextDouble() < 0.1) {
             sb.appendCodePoint(getRandomUnicode());
         }
-        if (RANDOM.nextDouble() < 0.05) { // Aún menos frecuencia para el segundo
+        if (RANDOM.nextDouble() < 0.05) {
             sb.appendCodePoint(getRandomUnicode());
         }
 
