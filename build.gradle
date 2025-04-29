@@ -27,10 +27,11 @@ dependencies {
     // Spring boot
     implementation 'org.springframework.boot:spring-boot-starter-web'
     // MapStruct
-    implementation 'org.mapstruct:mapstruct'
-    annotationProcessor 'org.mapstruct:mapstruct-processor'
+    implementation 'org.mapstruct:mapstruct:1.5.0.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.0.Final'
     // couchbase
-    implementation 'org.springframework.boot:spring-boot-starter-data-couchbase'
+    implementation 'org.springframework.data:spring-data-couchbase'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     // Validation
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     // kafka
