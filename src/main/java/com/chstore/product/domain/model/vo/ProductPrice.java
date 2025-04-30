@@ -1,6 +1,6 @@
 package com.chstore.product.domain.model.vo;
 
-import com.chstore.product.domain.exception.InvalidProductPriceException;
+import com.chstore.product.domain.exception.InvalidProductValueObjectException;
 import lombok.Value;
 
 import java.math.BigDecimal;
@@ -11,7 +11,7 @@ public class ProductPrice {
 
     public ProductPrice(BigDecimal value) {
         if (value == null || value.compareTo(BigDecimal.ZERO) < 0) {
-            throw new InvalidProductPriceException("Price must be non-negative");
+            throw new InvalidProductValueObjectException("Price must be non-negative");
         }
         this.value = value;
     }

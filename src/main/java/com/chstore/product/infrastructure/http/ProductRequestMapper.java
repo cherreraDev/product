@@ -1,4 +1,5 @@
 package com.chstore.product.infrastructure.http;
+import com.chstore.product.domain.exception.InvalidProductValueObjectException;
 import com.chstore.product.domain.model.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -14,5 +15,5 @@ public interface ProductRequestMapper {
     @Mapping(source = "description", target = "description.value")
     @Mapping(source = "price", target = "price.value")
     @Mapping(source = "stock", target = "stock.value")
-    Product toDomain(ProductRequest request);
+    Product toDomain(ProductRequest request) throws InvalidProductValueObjectException;
 }
