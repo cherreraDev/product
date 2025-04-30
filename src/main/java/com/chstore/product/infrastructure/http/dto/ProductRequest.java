@@ -1,4 +1,4 @@
-package com.chstore.product.infrastructure.http;
+package com.chstore.product.infrastructure.http.dto;
 
 import java.math.BigDecimal;
 import java.util.UUID;

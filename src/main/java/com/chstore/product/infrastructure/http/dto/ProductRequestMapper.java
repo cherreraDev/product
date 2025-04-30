@@ -1,4 +1,4 @@
-package com.chstore.product.infrastructure.http;
+package com.chstore.product.infrastructure.http.dto;
 import com.chstore.product.domain.exception.InvalidProductValueObjectException;
 import com.chstore.product.domain.model.Product;
 import org.mapstruct.Mapper;

@@ -13,22 +13,22 @@ import java.util.Optional;
 @AllArgsConstructor
 @Repository
 public class ProductRepositoryImp implements ProductRepository {
-    private final ProductMongoRepository couchBaseRepository;
+    private final ProductMongoRepository mongoRepository;
     @Override
     public Product save(Product product) {
-        ProductEntity productEntity = this.couchBaseRepository.save(ProductMapper.INSTANCE.toEntity(product));
+        ProductEntity productEntity = this.mongoRepository.save(ProductMapper.INSTANCE.toEntity(product));
         return ProductMapper.INSTANCE.toDomain(productEntity);
     }
 
     @Override
     public Optional<Product> findById(ProductId id) {
-        Optional<ProductEntity> productEntity = this.couchBaseRepository.findById(id.getValue());
+        Optional<ProductEntity> productEntity = this.mongoRepository.findById(id.getValue());
 
         return productEntity.map(ProductMapper.INSTANCE::toDomain);
     }
 
     @Override
     public void deleteById(ProductId id) {
-        this.couchBaseRepository.deleteById(id.getValue());
+        this.mongoRepository.deleteById(id.getValue());
     }
 }
