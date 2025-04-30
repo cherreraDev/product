@@ -22,6 +22,13 @@ public class ProductController {
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+    @PostMapping("/new")
+    public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest request) {
+        Product product = ProductRequestMapper.INSTANCE.toDomain(request);
+        Product saved = service.save(product);
+        ProductResponse response = ProductResponseMapper.INSTANCE.toResponse(saved);
+        return ResponseEntity.ok(response);
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable UUID id) {

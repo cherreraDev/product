@@ -13,7 +13,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @Repository
 public class ProductRepositoryImp implements ProductRepository {
-    private final ProductCouchBaseRepository couchBaseRepository;
+    private final ProductMongoRepository couchBaseRepository;
     @Override
     public Product save(Product product) {
         ProductEntity productEntity = this.couchBaseRepository.save(ProductMapper.INSTANCE.toEntity(product));

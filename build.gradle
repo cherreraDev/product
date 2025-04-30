@@ -26,12 +26,8 @@ repositories {
 dependencies {
     // Spring boot
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    // MapStruct
-    implementation 'org.mapstruct:mapstruct:1.5.0.Final'
-    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.0.Final'
-    // couchbase
-    implementation 'org.springframework.data:spring-data-couchbase'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    // Mongo
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     // Validation
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     // kafka
@@ -39,8 +35,9 @@ dependencies {
     // lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    // Logging
-    implementation 'net.logstash.logback:logstash-logback-encoder'
+    // MapStruct
+    implementation 'org.mapstruct:mapstruct:1.5.0.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.0.Final'
     // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
