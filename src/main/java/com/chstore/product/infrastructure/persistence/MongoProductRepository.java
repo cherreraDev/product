@@ -15,8 +15,8 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Repository
-public class ProductRepositoryImp implements ProductRepository {
-    private final ProductMongoRepository mongoRepository;
+public class MongoProductRepository implements ProductRepository {
+    private final SpringDataProductMongoRepository mongoRepository;
     @Override
     public Product save(Product product) {
         try {
